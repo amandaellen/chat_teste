@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap-vue/dist/bootstrap-vue.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="list_group" class="container">
+        <div class="row">
+            <div class="col-md-8" style="margin-top: 50px">
+                 <b-button variant="success" v-b-modal.modal>
+                    Chat  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                </b-button>
+            </div>
+        </div>
+
+              <!-- Modal Component -->
+              <b-modal id="modal" title="Suporte On-line" hide-footer>
+                <div class="list-group" >
+                    <a v-for="l in list.group" href="#" v-b-modal.modal1 class="list-group-item list-group-item-action">
+                    {{l.name }}
+                  </a>
+                </div>
+              </b-modal>
+
+               <b-modal id="modal1" title="Chat" hide-footer>
+                <div id="app" class="row">
+                    <div id="chat" class="col-md-12" style="margin-bottom: 10px; border-bottom: 1px solid #e9ecef;
+                    padding-bottom: 30px;">
+                         <div class="row" style="padding-bottom: 20px">
+                            <div class="col-md-2">
+                                <div style="height:50px; width: auto; background-color: #808080"></div>
+                            </div>
+                            <div class="col-md-10" style="text-align: left: ">
+                                <small>Rubens Santos:</small><br>
+                                <span>Bem Vindo(a)! Como posso te ajudar?</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10" style="text-align: right">
+                                <small>Amanda Oliveira:</small><br>
+                                <span>Olá, estou com uma dúvida.</span>
+                            </div>
+                            <div class="col-md-2">
+                                <div style="height:50px; width: auto; background-color: #808080"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="form" class="col-md-12" v-on:submit.prevent="addMessage">
+                        <div class="row">
+                            <div  id="message" class="col-md-9" >
+                                 <b-form-textarea id="textarea1"
+                                                 placeholder="Digite aqui sua mensagem"
+                                                  v-model="newMessage.mensagem"
+                                                 :rows="3"
+                                                 :max-rows="6">
+                                </b-form-textarea>
+                            </div>
+                            <div  id="message" class="col-md-3" style="text-align: right" >
+                                 <b-button variant="success" type="submit" >Enviar</b-button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+
+              </b-modal>
+
+    </div>
+
+
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/vue/dist/vue.min.js"></script>
+     <script type="text/javascript" src="node_modules/bootstrap-vue/dist/bootstrap-vue.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script type="text/javascript " src="app/app.js"></script>
+</body>
+<script type="text/javascript">
+
+
+
+</script>
+</html>
